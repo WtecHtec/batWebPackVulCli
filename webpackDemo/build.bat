@@ -1,27 +1,27 @@
 
 time/t
-echo '²âÊÔ' 
+echo 'æµ‹è¯•' 
 ::@echo off
 ::start cmd /k "cd E:\works\webpackDemo\modlueA &&  npm run build  && taskkill /f /t /im cmd.exe"
 ::for /r . %%i in (.) do echo %%~pni
 
 @echo off
-::ÉèÖÃÎÄ¼ş¼ĞÃû×Ö
+::è®¾ç½®æ–‡ä»¶å¤¹åå­—
 SET SourceFile=dist
-::ÅĞ¶ÏÊÇ·ñdistµÄÎÄ¼ş¼Ğ
+::åˆ¤æ–­æ˜¯å¦distçš„æ–‡ä»¶å¤¹
 if exist %SourceFile% (
-::Èç¹û´æÔÚ£¬É¾³ıÖ®Ç°´ò°üºÃµÄdist
+::å¦‚æœå­˜åœ¨ï¼Œåˆ é™¤ä¹‹å‰æ‰“åŒ…å¥½çš„dist
    rd /s/q  dist
 ) else (
     echo %SourceFile% is not exist!
 )
 md %SourceFile%
 
-::±éÀúµ±Ç°Ä¿Â¼ÏÂÎÄ¼şÃû´øÓĞ modlue µÄÎÄ¼ş¼Ğ
+::éå†å½“å‰ç›®å½•ä¸‹æ–‡ä»¶åå¸¦æœ‰ modlue çš„æ–‡ä»¶å¤¹
 @echo off
 for /d %%i in (.\modlue*)  do (
      echo %%i 
-    :: ´ò¿ªÄ¿Â¼²¢Ö´ĞĞnpm ´ò°ü
+    :: æ‰“å¼€ç›®å½•å¹¶æ‰§è¡Œnpm æ‰“åŒ…
     start cmd /k  "cd %%i   &&  npm run build   && taskkill /f /t /im cmd.exe"
 )
 time/t
